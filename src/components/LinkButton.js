@@ -9,7 +9,7 @@ const LinkButton = ({ children, appearance, ...rest }) => {
     [`button--${appearance}`]: appearance
   })
   return (
-  <Link {...rest}>
+  <Link {...rest} style={{ lineHeight: 0 }}>
     <button className={btnClases}>{children}</button>
   </Link>
 )}
