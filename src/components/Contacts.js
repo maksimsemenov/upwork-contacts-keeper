@@ -23,7 +23,7 @@ const sortContacts = (contacts, field = 'firstName', order = 'asc') => {
       case 'asc':
         return a[field] > b[field] ? 1 : a[field] < b[field] ? -1 : 0
       default:
-        return a[field] < b[field] ? 1 : a[field] < b[field] ? -1 : 0
+        return a[field] > b[field] ? -1 : a[field] < b[field] ? 1 : 0
     }
   }
 )}
@@ -49,6 +49,7 @@ const Contacts = ({ contacts = [], onContactsSort, query }) => {
   const { search, sortingField, sortingOrder } = query
   const filteredContacts = filterContacts(contacts, search)
   const sortedContacts = sortContacts(filteredContacts, sortingField, sortingOrder)
+
   const handleContactSort = (field, sortingField, sortingOrder) => {
     const path = {
       pathname: '/',
