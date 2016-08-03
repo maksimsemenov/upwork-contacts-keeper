@@ -1,0 +1,17 @@
+.app {
+  font-family: 'Open Sans';
+}
+
+.app_header {
+  background-color: #2771B3;
+  padding: 25px 100px 15px 100px;
+  box-sizing: border-box;
+  color: white;
+  border-bottom: 12px solid #E8E8E8;
+}
+
+.app_title {
+  font-size: 20px;
+  font-weight: 300;
+  margin: 0;
+}

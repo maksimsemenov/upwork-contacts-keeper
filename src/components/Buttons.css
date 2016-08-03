@@ -1,0 +1,88 @@
+.button {
+  padding: 10px 20px;
+  margin: 0;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 300;
+  color: #ffffff;
+  background-color: #2771B3;
+  border: 1px solid #2771B3;
+  border-radius: 2px;
+  transition: border-color 0.3s ease-out, background-color 0.3s ease-out;
+}
+.button:hover {
+  border-color: #1F5A8F;
+  background-color: #1F5A8F;
+}
+.button:focus {
+  outline: none;
+  box-shadow: 0 0 2px 0 rgba(39, 113, 179, 0.5);
+}
+.button:active {
+  transform: translateY(1px);
+}
+.button__text {
+  text-decoration: none;
+}
+
+.button--cancel {
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 300;
+  color: #aaaaaa;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  transition: color 0.3s ease-out;
+}
+.button--cancel:hover {
+  border-color: transparent;
+  background-color: transparent;
+  color: #666666;
+}
+.button--cancel:focus {
+  outline: none;
+}
+.button--cancel:active {
+  transform: translateY(1px);
+}
+
+.button--close {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: none;
+  opacity: 0.8;
+  transition: opacity 0.3s ease-out;
+}
+.button--close::before,
+.button--close::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  width: 2px;
+  height: 20px;
+  background-color: #ffffff;
+  top: 50%;
+  left: 50%;
+}
+.button--close::before {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.button--close::after {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.button--close:hover {
+  background-color: transparent;
+  opacity: 1;
+}
+.button--close:focus {
+  outline: none;
+}
+.button--close:active {
+  transform: translateY(1px);
+}

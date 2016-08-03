@@ -1,0 +1,23 @@
+.search {
+  width: 30%;
+  min-width: 200px;
+  font-size: 14px;
+  padding: 10px 10px;
+  border: 1px solid #dddddd;
+  border-radius: 2px;
+  transition: border-color 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+.search:hover {
+  border-color: #bbbbbb
+}
+.search:focus,
+.search:active {
+  border-color: #2771B3;
+  box-shadow: 0 0 2px 0 rgba(39, 113, 179, 0.6);
+  outline: none;
+}
+.search::placeholder {
+  font-weight: 300;
+  font-style: italic;
+  color: #bbbbbb;
+}

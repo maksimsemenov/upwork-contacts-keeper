@@ -1,0 +1,111 @@
+.modal {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #888888;
+  background-color: rgba(0, 0, 0, 0.4);
+
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  animation: fade-in 0.3s ease-out;
+}
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.new-contact {
+  position: relative;
+  margin-top: 70px;
+  width: 600px;
+
+  background-color: #ffffff;
+  border-radius: 3px;
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.3);
+
+  overflow: hidden;
+  animation: slide-in 0.5s ease-out;
+}
+@keyframes slide-in {
+  0% { opacity: 0; transform: translateY(-40px); }
+  100% { opacity: 1; transform: none; }
+}
+
+.new-contact__header {
+  padding: 15px 15px 10px 30px;
+  background-color: #2771B3;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+.new-contact__title {
+  color: #ffffff;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 300;
+}
+.new-contact__body {
+  padding: 20px 10px 10px 30px;
+}
+.controls-row {
+  margin-bottom: 25px;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.controls-group {
+  box-sizing: border-box;
+  padding-right: 20px;
+  display: flex;
+  flex-flow: column;
+}
+.controls-group--narrow {
+  width: 50%;
+}
+.controls-group--wide {
+  width: 100%;
+}
+.controls__label {
+  font-size: 12px;
+  color: #bbbbbb;
+  margin-bottom: 3px;
+}
+.controls__label--required {
+  color: #000000;
+}
+.controls__label--required::after {
+  content: '*';
+  margin-left: 4px;
+  color: #E9453C;
+}
+.controls__textfield {
+  font-size: 14px;
+  padding: 10px 10px;
+  border: 1px solid #dddddd;
+  border-radius: 2px;
+  transition: border-color 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+.controls__textfield:hover {
+  border-color: #bbbbbb
+}
+.controls__textfield:focus,
+.controls__textfield:active {
+  border-color: #2771B3;
+  box-shadow: 0 0 2px 0 rgba(39, 113, 179, 0.6), inset 0 0 1px 0 rgba(39, 113, 179, 0.4);
+  outline: none;
+}
+.controls__textfield::placeholder {
+  font-weight: 300;
+  font-style: italic;
+  color: #bbbbbb;
+}
+.controls__textfield.is-empty {
+  border-color: #E9453C
+}
+
+.new-contact__footer {
+  padding: 20px 30px;
+  border-top: 1px solid #eeeeee;
+}

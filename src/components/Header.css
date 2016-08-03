@@ -1,0 +1,12 @@
+.content-header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+.content-header__add-icon {
+  fill: #ffffff;
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
