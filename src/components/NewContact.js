@@ -10,11 +10,16 @@ class NewContact extends Component {
   constructor(props) {
     super(props)
     this.handleSubmit = this._handleSubmit.bind(this)
+    this.handleBlur = this._handleBlur.bind(this)
+    this.state = {
+      firstName: false,
+      lastName: false
+    }
   }
   _handleSubmit() {
-    if (this.firstName.value === '' || !this.lastName.value === '') {
-      if (!this.firstName.value === '') {this.firstName.classList.add('is-empty')}
-      if (!this.lastName.value === '') {this.lastName.classList.add('is-empty')}
+    if (this.firstName.value === '' || this.lastName.value === '') {
+      if (this.firstName.value === '') {this.setState({ firstName: true })}
+      if (this.lastName.value === '') {this.setState({ lastName: true })}
     } else {
       if (this.firstName.value !== '') {this.firstName.classList.remove('is-empty')}
       if (this.lastName.value !== '') {this.lastName.classList.remove('is-empty')}
@@ -30,6 +35,11 @@ class NewContact extends Component {
       browserHistory.push('/')
     }
   }
+  _handleBlur(e) {
+    this.setState({
+      [e.target.id]: e.target.value === ''
+    })
+  }
   render() {
     return (
       <div className='modal'>
@@ -44,7 +54,7 @@ class NewContact extends Component {
                 <div className='controls-group controls-group--narrow'>
                   <label className='controls__label controls__label--required' htmlFor='firstName'>First Name</label>
                   <input
-                    className='controls__textfield'
+                    className={`controls__textfield${this.state.firstName ? ' is-empty' : ''}`}
                     placeholder='First Name'
                     ref={(c) => {this.firstName = c}}
                     type='text'
@@ -52,18 +62,20 @@ class NewContact extends Component {
                     name='firstName'
                     required={true}
                     autoFocus={true}
+                    onBlur={this.handleBlur}
                   />
                 </div>
                 <div className='controls-group controls-group--narrow'>
                   <label className='controls__label controls__label--required' htmlFor='lastName'>Last Name</label>
                   <input
-                    className='controls__textfield'
+                    className={`controls__textfield${this.state.lastName ? ' is-empty' : ''}`}
                     placeholder='Last Name'
                     ref={(c) => {this.lastName = c}}
                     type='text'
                     id='lastName'
                     name='lastName'
                     required={true}
+                    onBlur={this.handleBlur}
                   />
                 </div>
               </div>
@@ -119,7 +131,7 @@ class NewContact extends Component {
             </form>
           </div>
           <div className='new-contact__footer'>
-            <button className='button' form='newContact' onClick={this.handleSubmit}>Save</button>
+            <button className='button' onClick={this.handleSubmit}>Save</button>
           </div>
         </div>
       </div>
